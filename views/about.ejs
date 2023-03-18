@@ -1,0 +1,37 @@
+<html lang="en">
+
+<%- include('./partials/header.ejs')%>
+
+<body>
+    <%- include('./partials/nav.ejs', {user: user})%>
+    <div class="blogs content explore-movies">
+        <div class="slide-wrapper">
+            
+        </div>
+    </div>
+    <%- include('./partials/footer.ejs')%>
+</body>
+<script>
+    const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '71890957bemsh38674b3021d2894p13ca75jsn529d19ed1809',
+                'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
+            }
+        };
+
+        fetch('https://online-movie-database.p.rapidapi.com/auto-complete?q=pixar', options)
+            .then(response => response.json())
+            .then(data => {
+                const list = data.d;
+                console.log(list);
+                list.map((item) => {
+                    const name = item.l;
+                    const poster = item.i.imageUrl;
+                    const movie = `<li class="movie-slide"><img src="${poster}"><h4 style="max-width: 200px;">${name}</h4></li>`
+                    document.querySelector('.slide-wrapper').innerHTML += movie;
+                })
+            })
+            .catch(err => console.error(err));
+</script>
+</html>

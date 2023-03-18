@@ -1,0 +1,18 @@
+
+<nav>
+    <%-include('./logo.ejs')%>
+    <ul>
+        <li><a href="/">Family</a></li>
+        <li><a href="/about">Explore</a></li>
+        <li><a href="/recommendations/create">New Blogs</a></li>
+        <li>
+            <% var imgUrl = "/users/" + user + ".png" %>
+            <img
+                src = <%= imgUrl %>
+                class="user"
+                width="40"
+                height="auto"
+            ></li>
+    </ul>
+
+</nav>

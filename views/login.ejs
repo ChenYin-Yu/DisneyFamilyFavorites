@@ -1,0 +1,24 @@
+<html lang="en">
+
+<%- include('./partials/header.ejs')%>
+    <%-include('./partials/logo.ejs')%>
+    <body>
+        <h2 class="login">Who is watching</h2>
+        <form action="/home" method="post" class="login">
+            <div class="login-user">
+                <button name= "user" type="submit" value = "mei" ><img src="/users/mei.png"></button>
+                <label class="user-name">Mei</label>
+            </div>
+            <div class="login-user">
+                <button name= "user" type="submit" value = "luca" ><img src="/users/luca.png"></button>
+                <label class="user-name">Luca</label>
+            </div>
+            <div class="login-user">
+                <button name= "user" type="submit" value = "sadness" ><img src="/users/sadness.png"></button>
+                <label class="user-name">Sadness</label>
+            </div>
+        </form>
+        <%- include('./partials/footer.ejs')%>
+    </body>
+
+</html>

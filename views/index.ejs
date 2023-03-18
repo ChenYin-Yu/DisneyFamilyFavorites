@@ -1,0 +1,43 @@
+<html lang="en">
+
+<%- include('./partials/header.ejs') %>
+
+<body>
+    <%- include('./partials/nav.ejs', {user: user})%>
+    <div class="blogs content">
+        <h4>Family board</h4>    
+        <% if(blogs.length >0) { %>
+            <% blogs.forEach( blog => { %>
+                <div class="single" href="/recommendations/<%= blog._id%>">
+                    <%var imgUrl="/users/" + blog.author + ".png"%>
+                    <div class = "author-info">
+                        <img class = "authors" src=<%= imgUrl %> />
+                        <div class="author-text-info">
+                            <span class="authors_name"> <%= blog.author %> &nbsp;<span class="post_date"><%=blog.date %></span> </span>
+                        </div>
+                    </div>
+                    <div class = "post-content">
+                        <h3 class="title"><%= blog.title %></h3>
+                        <p class="snippet"><%= blog.snippet %></p> 
+                        <p class="snippet"><%= blog.body %></p>
+                    </div>
+                </div>
+                    <div class="interaction-options">
+                        <span class="material-symbols-rounded" style="font-size: 1em;">
+                            sms
+                        </span>
+                        <span class="material-symbols-rounded" style="font-size: 1em;">
+                            favorite
+                        </span>
+                        <span class="material-symbols-rounded" style="font-size: 1em;">
+                            add_box
+                        </span>
+                    </div>
+               
+            <% }) %>
+        <% } %>
+    </div>
+    <%- include('./partials/footer.ejs')%>
+</body>
+
+</html>

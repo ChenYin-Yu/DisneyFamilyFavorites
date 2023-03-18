@@ -1,0 +1,29 @@
+<html lang="en">
+
+<%- include('./partials/header.ejs')%>
+
+<body>
+    <%- include('./partials/nav.ejs', {user: user})%>
+    <div class="create-blog content">
+        <form action="/recommendations" method="POST">
+            <label for="title"> Movie</label>
+            <input type ="text" id = "title" name="title" required>
+            <label for="snippet"> Movie snippet:</label>
+            <input
+                type="text"
+                id="snippet"
+                name="snippet"
+                required
+            >
+            <label for="body">Share with your friends how do you like this movie!</label>
+            <textarea id="body" required name="body"></textarea>
+            <input type="hidden" id="author" name="author" value= <%= user %> >
+            <% let currentDate = new Date();%>
+            <% let date = currentDate.getMonth() + 1 + "." +currentDate.getDate();%>
+            <input type="hidden" id="date" name="date" value=<%=date%>>
+            <button>submit</button>
+        </form>
+    </div>
+    <%- include('./partials/footer.ejs')%>
+</body>
+</html>
