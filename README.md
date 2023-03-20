@@ -14,7 +14,7 @@ This project is based on Disney plus to build a platform for members in the same
 
 - Explore movies
 
-[`demo video`](https://youtu.be/Jq1RBOwMIoM)
+[demo video](https://youtu.be/Jq1RBOwMIoM)
 
 ## Project introduction
 
@@ -25,6 +25,6 @@ This project is based on Disney plus to build a platform for members in the same
 ## Resource
 
 - Images: The images used in this project are All Creative Commons images
-- Icons: [`Google Fonts`](https://fonts.google.com/icons)
+- Icons: [Google Fonts](https://fonts.google.com/icons)
 - The design of the website is based on Disney Plus
 - Movie API: Rapid API IMDb
